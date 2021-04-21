@@ -185,7 +185,7 @@ while getopts "b:f:uvhd" opt; do
     \?) echo "Invalid option: -$OPTARG" >&2
         exit 1
         ;;
-##################These flags will be updated later###########################
+#######################These flags will be updated later########################
   b)
 		bg=${OPTARG}
 		;;
