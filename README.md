@@ -36,5 +36,5 @@
   ```
 
 <p align="left">
-  <a href="#"><img title="Internet" src="https://simpleicons.org/icons/privateinternetaccess.svg" width="10" height="10"></a>
-</p><p>will not work without Internet</p>
+  <a href="#"><img title="Internet" src="https://simpleicons.org/icons/privateinternetaccess.svg" width="20" height="20"></a>
+will not work without Internet</p>
