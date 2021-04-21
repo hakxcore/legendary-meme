@@ -1,0 +1,246 @@
+#!/usr/bin/bash
+# Author: HAKXCORE https://github.com/hakxcore
+# Check for valid task numbers (valid characters)
+currentVersion="1.0"
+configuredClient=""
+## This function determines which http get tool the system has installed and returns an error if there isnt one
+getConfiguredClient()
+{
+  if  command -v curl &>/dev/null; then
+    configuredClient="curl"
+  elif command -v wget &>/dev/null; then
+    configuredClient="wget"
+  elif command -v http &>/dev/null; then
+    configuredClient="httpie"
+  elif command -v fetch &>/dev/null; then
+    configuredClient="fetch"
+  else
+    echo "Error: This tool requires either curl, wget, httpie or fetch to be installed." >&2
+    return 1
+  fi
+}
+
+## Allows to call the users configured client without if statements everywhere
+httpGet()
+{
+  case "$configuredClient" in
+    curl)  curl -A curl -s "$@" ;;
+    wget)  wget -qO- "$@" ;;
+    httpie) http -b GET "$@" ;;
+    fetch) fetch -q "$@" ;;
+  esac
+}
+checkInternet()
+{
+  httpGet github.com > /dev/null 2>&1 || { echo "Error: no active internet connection" >&2; return 1; } # query github with a get request
+}
+update()
+{
+  # Author: HAKXCORE https://github.com/hakxcore
+  # Update utility version
+  # To test the tool enter in the defualt values that are in the examples for each variable
+  currentVersion=$currentVersion
+  repositoryName="legendary-meme" #Name of repostiory to be updated ex. Sandman-Lite
+  githubUserName="hakxcore" #username that hosts the repostiory ex. hakxcore
+  nameOfInstallFile="install.sh" # change this if the installer file has a different name be sure to include file extension if there is one
+  latestVersion=$(httpGet https://api.github.com/repos/$githubUserName/$repositoryName/tags | grep -Eo '"name":.*?[^\\]",'| head -1 | grep -Eo "[0-9.]+" ) #always grabs the tag without the v option
+
+  if [ $currentVersion == "" || $repositoryName == "" || $githubUserName == "" || $nameOfInstallFile == "" ]; then
+    echo "Error: update utility has not been configured correctly." >&2
+    exit 1
+  elif [ $latestVersion == "" ]; then
+    echo "Error: no active internet connection" >&2
+    exit 1
+  else
+    if [ "$latestVersion" != "$currentVersion" ]; then
+      echo "Version $latestVersion available"
+      echo -n "Do you wish to update $repositoryName [Y/n]: "
+      read -r answer
+      if [ "$answer" == [Yy] ]; then
+        cd ~ || { echo 'Update Failed'; exit 1; }
+        if [ -d  ~/$repositoryName ]; then rm -rf $repositoryName || { echo "Permissions Error: try running the update as sudo"; exit 1; } ; fi
+        echo -n "Downloading latest version of: $repositoryName."
+        git clone -q "https://github.com/$githubUserName/$repositoryName" && touch .TSnippetsHiddenFile || { echo "Failure!"; exit 1; } &
+        while [ ! -f .TSnippetsHiddenFile ]; do { echo -n "."; sleep 2; };done
+        rm -f .TSnippetsHiddenFile
+        echo "Success!"
+        cd $repositoryName || { echo 'Update Failed'; exit 1; }
+        git checkout "v$latestVersion" 2> /dev/null || git checkout "$latestVersion" 2> /dev/null || echo "Couldn't git checkout to stable release, updating to latest commit."
+        chmod a+x install.sh #this might be necessary in your case but wasnt in mine.
+        ./$nameOfInstallFile "update" || exit 1
+        cd ..
+        rm -r -f $repositoryName || { echo "Permissions Error: update succesfull but cannot delete temp files located at ~/$repositoryName delete this directory with sudo"; exit 1; }
+      else
+        exit 1
+      fi
+    else
+      echo "$repositoryName is already the latest version"
+    fi
+  fi
+}
+
+backGrounds()
+{
+  cat <<EOF
+   Usage : Enter any background from these when will be asked.
+
+   1 tackbar            2 tafraid        3 tagnes            4 taint-got-time 5 tams
+   6 tants              7 tapcr          8tatis              9 taway          10tawesome
+   11 tawesome-awkward  12 tawkward      13 tawkward-awesome 14 tbad          15 tbadchoice
+   16 tbd               17 tbender       18 tbihw            19 tbiw          20 tblb         
+   21 tboat             22 tboth         23 tbs              24 tbuzz         25 tcaptain         
+   26 tcaptain-america  27 tcb           28 tcbg             29 tcenter       30 tch         
+   31 tcheems           32 tchosen       33 tcmm             34 tcrazypills   35 tcryingfloor         
+   36 tdb               37 tdg           38 tdisastergirl    39 tdodgson      40 tdoge         
+   41 tdrake            42 tds           43 tdsm             44 tdwight       45 telf         
+   46 termg             47 tfa           48 tfacepalm        49 tfbf          50 tfeelsgood         
+   51 tfetch            52 tfine         53 tfirsttry        54 tfmr          55 tfry         
+   56 tfwp              57 tgandalf      58 tgb              59 tgears        60 tggg         
+   61 tgru              62 tgrumpycat    63 thagrid          64 thappening    65 tharold         
+   66 thipster          67 ticanhas      68 timsorry         69 tinigo        70 tinteresting         
+   71 tive              72 tiw           73 tjd              74 tjetpack      75 tjoker         
+   76 tjw               77 tkeanu        78 tkermit          79 tkk           80 tkombucha         
+   81 tleo              82 tlive         83 tll              84 tlrv          85 tmb         
+   86 tmichael-scott    87 tmillers      88 tmini-keanu      89 tmmm          90 tmoney         
+   91 tmordor           92 tmorpheus     93 tmw              94 tnice         95 tnoidea         
+   96 tntot             97 toag          98 tofficespace     99 tolder        100 toprah         
+   101 tpatrick         102 tpersian     103 tphilosoraptor  104 tpigeon      105 tptj         
+   106 tpuffin          107 tred         108 tregret         109 tremembers   110 trollsafe         
+   111 tsad-biden       112 tsad-boehner 113 tsad-bush       114 tsad-clinton 115 tsadfrog         
+   116 tsad-obama       117 tsaltbae     118 tsarcasticbear  119 tsb          120 tscc         
+   121 tsf              122 tsk          123 tski            124 tsnek        125 tsoa         
+   126 tsohappy         127 tsohot       128 tsoup-nazi      129 tsparta      130 tspiderman         
+   131 tspongebob       132 tss          133 tstew           134 tstonks      135 tstop-it         
+   136 tsuccess         137 ttenguy      138 ttoohigh        139 ttried       140 ttrump         
+   141 tugandanknuck    142 twhatyear    143 twinter         144 twkh         145 twonka         
+   146 tworst           147 txy          148 tyallgot        149 tyodawg      150 tyuno
+EOF
+}
+
+main(){
+    echo -en "\e[1;2;32m Enter the name for the meme's background (Ex. buzz, doge, blb ): \e[0m"
+    read bg
+    echo -en "\e[1;2;32m Enter text for first line: \e[0m"
+    read raw_first
+    almost_first=$(echo "$raw_first" | awk '{print tolower($0)}')
+    first=$(echo "$almost_first" | sed -e 's/ /_/g')
+    echo -en "\e[1;2;32m Enter text for second line: \e[0m"
+    read raw_second
+    almost_second=$(echo "$raw_second" | awk '{print tolower($0)}')
+    second=$(echo "$almost_second" | sed -e 's/ /_/g')
+    echo -en "\e[1;2;32m Choose any random digit between[0..20]: \e[0m"
+    read num
+    if [ -z "$first" ]
+    then
+    first=$(echo "_")
+    else
+      echo ""
+    fi
+    if [ -z "$second" ]
+    then
+    second=$(echo "_")
+    else
+      echo ""
+    fi
+    echo -e "\e[1;2;32m ------------------------GENRATING MEME FOR YOU----------------------------\e[0m"
+    echo -e "\033[31m"
+    curl "https://api.memegen.link/images/$bg/$first/$second.png" >> $fileName$num.png || return 1
+    echo "\e[0m"
+    echo -e "\e[1;2;32m ----------------------MEME SUCCESSFULLY GENRATED--------------------------\e[0m"
+    echo ""
+    mv $fileName$num.png output
+    echo -en "\e[1;2;32m Meme stored in output Folder\e[0m"
+    echo ""
+    echo -en "\e[1;2;32m Do you wanna open it[y/n]: \e[0m"
+    read choice
+    if [ "$choice" == "y" ] || [ "$choice" == "Y" ]; then
+	    xdg-open output/$fileName$num.png
+    fi	    
+    return 0
+}
+
+usage()
+{
+  cat <<EOF
+Meme
+Description: A lightning fast meme generator
+Usage: ./meme [flags] or ./meme
+  -d  See all Backgrouds for meme
+  -u  Update legendary-meme you can use [update] also
+  -h  Show the help you can use [help] also
+  -v  Get the tool version you can use [version] also
+Examples:
+   ./meme #Thats it
+   ./meme -h or ./meme -help #For help
+   ./meme -d #For all backgrounds
+   ./meme -v #For version
+EOF
+}
+
+
+
+while getopts "b:f:uvhd" opt; do
+  case "$opt" in
+    \?) echo "Invalid option: -$OPTARG" >&2
+        exit 1
+        ;;
+##################These flags will be updated later###########################
+  b)
+		bg=${OPTARG}
+		;;
+	f)
+		raw_first=${OPTARG}
+		almost_first=$(echo "$raw_first" | awk '{print tolower($0)}')
+    	first=$(echo "$almost_first" | sed -e 's/ /_/g')
+    	;;
+    s)
+		raw_second=${OPTARG}
+		almost_second=$(echo "$raw_second" | awk '{print tolower($0)}')
+    	second=$(echo "$almost_second" | sed -e 's/ /_/g')
+    	;;
+    f)
+        fileName=${OPTARG}
+        getConfiguredClient || exit 1
+        checkInternet || exit 1
+        main || exit 1
+        exit 0
+    	;;
+##############################################################################
+    h)  usage
+        exit 0
+        ;;
+    v)  echo "Version $currentVersion"
+        exit 0
+        ;;
+    u)  getConfiguredClient || exit 1
+        checkInternet || exit 1
+        update
+        exit 0
+        ;;
+    d)
+        backGrounds
+        exit 0
+        ;;
+
+    :)  echo "Option -$OPTARG requires an argument." >&2
+        exit 1
+        ;;
+  esac
+done
+
+# special set of first arguments that have a specific behavior across tools
+if [ "$fileName" == "" ]; then
+	fileName="meme"
+	main || exit 1
+	exit 0
+fi
+
+if [ "$1" == "update" ]; then
+	getConfiguredClient || exit 1
+	checkInternet || exit 1
+	update || exit 1
+	exit 0
+elif [ "$1" == "help" ]; then
+	usage
+	exit 0
+fi
