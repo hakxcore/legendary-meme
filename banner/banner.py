@@ -36,6 +36,7 @@ table_instance = SingleTable([["""
                                           Author: Hakxcore                            
                                           Email:  anonymous_mails_box@protonmail.ch       
                                           Github: https://github.com/hakxcore             
-"""]], '(hakxcore)')
+"""]], '(hakxcore)')#banner
 print(Fore.BLACK+Back.WHITE+(table_instance.table))
 print()
+
