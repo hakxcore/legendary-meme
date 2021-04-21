@@ -26,6 +26,8 @@ if [ $Choose -eq 1 ]; then
   sudo install python python2 python3
   sudo apt python3-pip
   echo $BLUE"Installation Successfull"$RESETBG
+  sleep 2
+  clear
   ./meme
 fi
 
@@ -34,5 +36,7 @@ if [ $Choose -eq 2 ]; then
   install python python2 python3
   apt python3-pip
   echo $BLUE"Installation Successfull"$RESETBG
+  sleep 2
+  clear
   ./meme
 fi
