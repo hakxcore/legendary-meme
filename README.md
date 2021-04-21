@@ -31,6 +31,7 @@
   ```bash
 
   > cd legendary-meme
+  > ./install
   > ./meme
 
   ```
