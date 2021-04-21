@@ -5,6 +5,9 @@
   <img src="https://raw.githubusercontent.com/hakxcore/legendary-meme/main/media/legendary-meme.png" width="200" height="200"/>
 </p>
 <p align="center">
+<a href="#"><img title="legendary-meme" src="https://img.shields.io/badge/-%20LEGENDARY_MEME-green%3FcolorA%3D%2523ff0000%26colorB%3D%2523017e40"></a>
+</p>
+<p align="center">
   <a href="https://wa.me/+916006511429"><img title="Whatsapp" src="https://simpleicons.org/icons/whatsapp.svg" width="50" height="50"></a>
 </p>
 <p align="center">
@@ -28,7 +31,7 @@
   ```bash
 
   > cd legendary-meme
-  > ./install
   > ./meme
 
   ```
+  <p>will not work without Internet</p>
