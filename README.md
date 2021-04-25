@@ -32,6 +32,7 @@
 
   > cd legendary-meme
   > ./meme -h or ./meme -help
+## There is 150 backgrounds you can use, use
   > ./meme -d
   > ./install
 
