@@ -32,6 +32,7 @@
 
   > cd legendary-meme
   > ./meme -h or ./meme -help
+  > ./meme -d
   > ./install
 
   ```
