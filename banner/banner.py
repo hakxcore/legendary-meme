@@ -4,7 +4,7 @@ import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 from terminaltables import SingleTable
-print(Fore.BLUE+Back.YELLOW+"Hi My name is Mukesh Kumar "+ Fore.YELLOW+ Back.BLUE+"Get this tool from https://github.com/hakxcore/Timepass            ") 
+print(Fore.BLUE+Back.YELLOW+"Hi My name is Mukesh Kumar "+ Fore.YELLOW+ Back.BLUE+"Get this tool from https://github.com/hakxcore/legendary-meme            ") 
 table_instance = SingleTable([["""                                                                     
                          .-==++*++*+*+=:                    
                      -+*%@@@@@@@@@@@@@@@@%*:                
