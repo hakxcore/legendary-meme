@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 # Author: HAKXCORE https://github.com/hakxcore
 
-currentVersion="1.0"
+currentVersion="1.2.0"
 configuredClient=""
 ## This function determines which http get tool the system has installed and returns an error if there isnt one
 getConfiguredClient()
