@@ -84,36 +84,36 @@ backGrounds()
   cat <<EOF
    Usage : Enter any background from these when will be asked.
 
-   1 tackbar            2 tafraid        3 tagnes            4 taint-got-time 5 tams
-   6 tants              7 tapcr          8 tatis             9 taway          10 tawesome
-   11 tawesome-awkward  12 tawkward      13 tawkward-awesome 14 tbad          15 tbadchoice
-   16 tbd               17 tbender       18 tbihw            19 tbiw          20 tblb         
-   21 tboat             22 tboth         23 tbs              24 tbuzz         25 tcaptain         
-   26 tcaptain-america  27 tcb           28 tcbg             29 tcenter       30 tch         
-   31 tcheems           32 tchosen       33 tcmm             34 tcrazypills   35 tcryingfloor         
-   36 tdb               37 tdg           38 tdisastergirl    39 tdodgson      40 tdoge         
-   41 tdrake            42 tds           43 tdsm             44 tdwight       45 telf         
-   46 termg             47 tfa           48 tfacepalm        49 tfbf          50 tfeelsgood         
-   51 tfetch            52 tfine         53 tfirsttry        54 tfmr          55 tfry         
-   56 tfwp              57 tgandalf      58 tgb              59 tgears        60 tggg         
-   61 tgru              62 tgrumpycat    63 thagrid          64 thappening    65 tharold         
-   66 thipster          67 ticanhas      68 timsorry         69 tinigo        70 tinteresting         
-   71 tive              72 tiw           73 tjd              74 tjetpack      75 tjoker         
-   76 tjw               77 tkeanu        78 tkermit          79 tkk           80 tkombucha         
-   81 tleo              82 tlive         83 tll              84 tlrv          85 tmb         
-   86 tmichael-scott    87 tmillers      88 tmini-keanu      89 tmmm          90 tmoney         
-   91 tmordor           92 tmorpheus     93 tmw              94 tnice         95 tnoidea         
-   96 tntot             97 toag          98 tofficespace     99 tolder        100 toprah         
-   101 tpatrick         102 tpersian     103 tphilosoraptor  104 tpigeon      105 tptj         
-   106 tpuffin          107 tred         108 tregret         109 tremembers   110 trollsafe         
-   111 tsad-biden       112 tsad-boehner 113 tsad-bush       114 tsad-clinton 115 tsadfrog         
-   116 tsad-obama       117 tsaltbae     118 tsarcasticbear  119 tsb          120 tscc         
-   121 tsf              122 tsk          123 tski            124 tsnek        125 tsoa         
-   126 tsohappy         127 tsohot       128 tsoup-nazi      129 tsparta      130 tspiderman         
-   131 tspongebob       132 tss          133 tstew           134 tstonks      135 tstop-it         
-   136 tsuccess         137 ttenguy      138 ttoohigh        139 ttried       140 ttrump         
-   141 tugandanknuck    142 twhatyear    143 twinter         144 twkh         145 twonka         
-   146 tworst           147 txy          148 tyallgot        149 tyodawg      150 tyuno
+   001. ackbar          002. afraid      003. agnes           004. aint-got-time 005. ams
+   006. ants            007. apcr        008. atis            009. away          010. awesome
+   011. awesome-awkward 012. awkward     013. awkward-awesome 014. bad           015. badchoice
+   016. bd              017. bender      018. bihw            019. biw           020. blb         
+   021. boat            022. both        023. bs              024. buzz          025. captain         
+   026. captain-america 027. cb          028. cbg             029. center        030. ch         
+   031. cheems          032. chosen      033. cmm             034. crazypills    035. cryingfloor         
+   036. db              037. dg          038. disastergirl    039. dodgson       040. doge         
+   041. drake           042. ds          043. dsm             044. dwight        045. elf         
+   046. ermg            047. fa          048. facepalm        049. fbf           050. feelsgood         
+   051. fetch           052. fine        053. firsttry        054. fmr           055. fry         
+   056. fwp             057. gandalf     058. gb              059. gears         060. ggg         
+   061. gru             062. grumpycat   063. hagrid          064. happening     065. harold         
+   066. hipster         067. icanhas     068. imsorry         069. inigo         070. interesting         
+   071. ive             072. iw          073. jd              074. jetpack       075. joker         
+   076. jw              077. keanu       078. kermit          079. kk            080. kombucha         
+   081. leo             082. live        083. ll              084. lrv           085. mb         
+   086. michael-scott   087. millers     088. mini-keanu      089. mmm           090. money         
+   091. mordor          092. morpheus    093. mw              094. nice          095. noidea         
+   096. ntot            097. oag         098. officespace     099. older         100. oprah         
+   101. patrick         102. persian     103. philosoraptor   104. pigeon        105. ptj         
+   106. puffin          107. red         108. regret          109. remembers     110. rollsafe         
+   111. sad-biden       112. sad-boehner 113. sad-bush        114. sad-clinton   115. sadfrog         
+   116. sad-obama       117. saltbae     118. sarcasticbear   119. sb            120. scc         
+   121. sf              122. sk          123. ski             124. snek          125. soa         
+   126. sohappy         127. sohot       128. soup-nazi       129. sparta        130. spiderman         
+   131. spongebob       132. ss          133. stew            134. stonks        135. stop-it         
+   136. success         137. tenguy      138. toohigh         139. tried         140. trump         
+   141. ugandanknuck    142. whatyear    143. winter          144. wkh           145. wonka         
+   146. worst           147. xy          148. yallgot         149. yodawg        150. yuno
 EOF
 }
 
