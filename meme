@@ -180,6 +180,7 @@ main(){
     clear
     getConfiguredjp2a
     getConfiguredpv
+    python3 banner/banner.py
     echo -en "\e[1;2;32m Enter the name for the meme's background (Ex. buzz, doge, blb ): \e[0m"
     read bg
     echo -en "\e[1;2;32m Enter text for first line: \e[0m"
