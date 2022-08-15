@@ -24,17 +24,11 @@
 ## Clone this project
   
   ```bash
-  > git clone https://github.com/hakxcore/legendary-meme
-  ```
-## How to use
-  
-  ```bash
-
-  > cd legendary-meme
-  > ./meme -h or ./meme -help
-## There is 150 backgrounds you can use, use
-  > ./meme -d
-  > ./install
+  git clone https://github.com/hakxcore/legendary-meme
+  cd legendary-meme
+  ./install
+  ./meme
+  # There is 150 backgrounds you can use, use
 
   ```
 
