@@ -21,7 +21,7 @@
 <a href="#"><img title="MAINTENED" src="https://img.shields.io/badge/MAINTENED-YES-blue.svg"</a>
 </p>
   
-## Clone this project
+## Usage
   
   ```bash
   git clone https://github.com/hakxcore/legendary-meme
