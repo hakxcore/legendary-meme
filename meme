@@ -217,7 +217,7 @@ main(){
     mv $fileName$num.jpeg Meme
     echo -en "\e[1;2;32m Meme stored in Meme Folder\e[0m"
     echo ""
-    jp2a Meme/$fileName$num.jpeg | pv -qL 95
+    jp2a Meme/$fileName$num.jpeg | pv -qL 150
     echo ""
     xdg-open Meme/$fileName$num.jpeg 
     echo -e "\e[1;2;32m --------------------------MEME SUCCESSFULLY GENRATED------------------------------\e[0m"
